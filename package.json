@@ -1,0 +1,15 @@
+{
+  "name": "@auraflow/contracts",
+  "version": "2.0.0",
+  "description": "AuraFlow - Confidential Payroll on Stellar",
+  "private": true,
+  "scripts": {
+    "build": "stellar contract build",
+    "test": "cargo test",
+    "deploy:testnet": "bash scripts/deploy-testnet.sh",
+    "invoke": "stellar contract invoke"
+  },
+  "devDependencies": {
+    "stellar-cli": ">=25.2"
+  }
+}
