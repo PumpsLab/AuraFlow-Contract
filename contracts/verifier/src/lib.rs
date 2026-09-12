@@ -13,13 +13,15 @@ impl Verifier {
         env.storage().instance().set(&ADMIN, &admin);
     }
 
-    pub fn register_vk(env: Env, vk_hash: Bytes, vk_data: Bytes) {
+    pub fn register_vk(env: Env, admin: Address, vk_hash: Bytes, vk_data: Bytes) {
+        admin.require_auth();
         env.storage().persistent().set(&vk_hash, &vk_data);
     }
 
     pub fn verify(_env: Env, _proof: Bytes, _public_inputs: Bytes, _vk_hash: Bytes) -> bool {
-        // Stub: accepts any proof for initial deployment
-        // Production: implement UltraHonk verification
+        // WARNING: Stub implementation for development/testing only.
+        // Accepts ALL proofs unconditionally. Do NOT use in production
+        // until UltraHonk proof verification is implemented.
         true
     }
 }
