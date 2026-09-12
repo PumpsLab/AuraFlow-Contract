@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = [
+  "contracts/confidential-token",
+  "contracts/auraflow-payroll",
+  "contracts/verifier",
+  "contracts/auditor",
+]
+
+[workspace.dependencies]
+soroban-sdk = "21"
+soroban-token-sdk = "21"
+
+[profile.release]
+overflow-checks = true
